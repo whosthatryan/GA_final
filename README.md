@@ -1,1 +1,1 @@
-# GA_final
+Goal for this project is to make intaractive XY grids that will modulate the audio provided. I will update as I go!
