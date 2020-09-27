@@ -1,0 +1,89 @@
+/* .canvas-div-1 {
+    width: 25%;
+    height: 25%;
+    margin: 0 0 0 0;
+}  */
+@media only screen and (max-width: 600px) {
+
+    * {
+        font-family: 'Cabin Sketch', cursive;
+    }
+    
+    body {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-image: url('header-streak.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom;
+    }
+
+   #defaultCanvas0 {
+        width: 100%;
+    }
+
+    header {
+        opacity: 50%;
+        text-align: right;
+        font-size: 3vw;
+        color: floralwhite;
+        margin: 0 0 0 0;
+        
+    }
+    
+    .slider {
+        -webkit-appearance: none;  /* Override default CSS styles */
+        appearance: none;
+        width: 100%; /* Full-width */
+        height: 15px; /* Specified height */
+        background: #d3d3d3; /* Grey background */
+        outline: none; /* Remove outline */
+        opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+        -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+        transition: opacity .2s;
+      }
+}
+
+* {
+    font-family: 'Cabin Sketch', cursive;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('header-streak.png');
+    background-size: 100% 500px;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+body > img {
+    margin: 150px 0 0 0;
+}
+
+header {
+    opacity: 50%;
+    /* text-align: right; */
+    font-size: 3vw;
+    color: black;
+    margin: 0 0 0 0;
+}
+
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 20%; /* Full-width */
+    height: 15px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
