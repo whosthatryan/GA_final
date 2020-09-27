@@ -1,53 +1,3 @@
-/* .canvas-div-1 {
-    width: 25%;
-    height: 25%;
-    margin: 0 0 0 0;
-}  */
-@media only screen and (max-width: 600px) {
-
-    * {
-        font-family: 'Cabin Sketch', cursive;
-    }
-    
-    body {
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        background-image: url('header-streak.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: bottom;
-    }
-
-   #defaultCanvas0 {
-        width: 100%;
-    }
-
-    header {
-        opacity: 50%;
-        text-align: right;
-        font-size: 3vw;
-        color: floralwhite;
-        margin: 0 0 0 0;
-        
-    }
-    
-    .slider {
-        -webkit-appearance: none;  /* Override default CSS styles */
-        appearance: none;
-        width: 100%; /* Full-width */
-        height: 15px; /* Specified height */
-        background: #d3d3d3; /* Grey background */
-        outline: none; /* Remove outline */
-        opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-        -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-        transition: opacity .2s;
-      }
-}
-
 * {
     font-family: 'Cabin Sketch', cursive;
 }
@@ -55,35 +5,176 @@
 body {
     margin: 0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
-    background-image: url('header-streak.png');
-    background-size: 100% 500px;
+    /* padding: 100px 100px 100px 100px; */
+    background-image: url('bgV.png');
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
-}
-
-body > img {
-    margin: 150px 0 0 0;
+    background-color: 	#ebebeb;
 }
 
 header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
     opacity: 50%;
-    /* text-align: right; */
-    font-size: 3vw;
+    text-align: right;
+    font-size: 4vw;
+    text-align: center;
     color: black;
-    margin: 0 0 0 0;
+    margin: 50px 0 50px 0;
+    vertical-align: text-bottom;
 }
 
-.slider {
+input {
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;
-    width: 20%; /* Full-width */
-    height: 15px; /* Specified height */
+    width: 250px; /* Full-width */
+    height: 2px; /* Specified height */
     background: #d3d3d3; /* Grey background */
     outline: none; /* Remove outline */
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    margin: 0 0 0 0;
+
   }
+
+  input::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background:		#dab46d; /* Green background */
+    cursor: crosshair; /* Cursor on hover */
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; 
+    border-radius: 15%;
+  }
+
+  canvas {
+      padding: 0 0 0 18px;
+      max-width: 90%;
+      max-height: auto;
+  }
+
+.sliders {
+    margin: 0 0 0 0;
+}
+
+@media only screen and (min-width: 768px) {
+* {
+    font-family: 'Cabin Sketch', cursive;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: left;
+    padding: 100px 100px 100px 100px;
+    background-image: url('header-streak.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-color: 	#ebebeb;
+}
+
+
+header {
+    transform: rotateZ(270deg);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    opacity: 50%;
+    text-align: right;
+    font-size: 3.5vh;
+    color: black;
+    margin: 0 0 0 0;
+    vertical-align: text-bottom;
+}
+
+/* #canvas1 {
+    margin: 0 100px 0 0;
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+    align-items: center;
+} */
+
+input {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 40%; /* Full-width */
+    height: 15px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.5; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    margin: 0 0 0 150px;
+
+  }
+
+  input:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+
+  input::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background:		#dab46d; /* Green background */
+    cursor: crosshair; /* Cursor on hover */
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; 
+    border-radius: 15%;
+  }
+
+
+
+
+
+
+
+
+  .sliderR {
+    -webkit-appearance: slider-vertical; /* WebKit */
+    writing-mode: bt-lr; /* IE */
+    width: 15px;
+    height: 400px;
+    appearance: none;
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.5; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border-radius: 2.6px;
+  }
+
+  .sliderR:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+
+  .sliderR::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background:     #dab46d; 
+    cursor: crosshair; /* Cursor on hover */
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; 
+    border-radius: 15%;
+  }
+
+}

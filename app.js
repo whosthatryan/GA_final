@@ -4,10 +4,17 @@
 // const canvas4 = document.getElementById("canvas4").getContext("2d");
 
 let c2;
+let w = window.innerWidth;
+let h = window.innerWidth;
 
 function setup() {
-  createCanvas(700, 700);
-  c2 = createGraphics(700, 700);
+  createCanvas(w, h);
+  c2 = createGraphics(w, h);
+  // hSlider = createSlider(0, 500, 0)
+  // hSlider.position(400, 50)
+  // vSlider = createSlider(0, 500, 0)
+  // vSlider.position(200, 200)
+
 }
 
 function draw() {
@@ -17,12 +24,20 @@ function draw() {
   c2.noStroke();
 
   // shape(pX, pY, w, h)
-  // if(frameCount % 10 == 0) {
-  //   rect(random(width), 200, 50, 200);
-  // }
-  // if(frameCount % 10 == 0) {
-  //   rect(200, random(height), 200, 50);
-  // }
+  if(frameCount % 5 == 0) {
+    rect(random(width), 50, 50, 50);
+  }
+  if(frameCount % 5 == 0) {
+    rect(200, random(height), 200, 50);
+  }
+}
+
+window.onresize = function() {
+  
+  // assigns new values for width and height variables
+  w = window.innerWidth;
+  h = window.innerHeight;  
+  canvas.size(w,h);
 }
 
 
