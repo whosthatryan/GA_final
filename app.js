@@ -3,32 +3,43 @@
 // const canvas3 = document.getElementById("canvas3").getContext("2d");
 // const canvas4 = document.getElementById("canvas4").getContext("2d");
 
-let c2;
+let cnv;
+let cnv2;
 let w = window.innerWidth;
 let h = window.innerWidth;
+let hSlider;
 
 function setup() {
-  createCanvas(w, h);
-  c2 = createGraphics(w, h);
-  // hSlider = createSlider(0, 500, 0)
-  // hSlider.position(400, 50)
-  // vSlider = createSlider(0, 500, 0)
-  // vSlider.position(200, 200)
+  cnv = createCanvas(w, h);
+  cnv2 = createGraphics(w, h);
+  cnv.parent('canvasContainer')
+  hSlider = createSlider(0, 61, 0)
+  hSlider.position(60, 600)
+  vSlider = createSlider(0, 61, 0)
+  vSlider.position(60, 700)
 
 }
 
 function draw() {
+  // let frameCount = hSlider.value()
   background(100);
-  c2.background(250, 0, 250);
+  cnv2.background(250, 0, 250);
   noStroke();
-  c2.noStroke();
+  cnv2.noStroke();
 
   // shape(pX, pY, w, h)
-  if(frameCount % 5 == 0) {
-    rect(random(width), 50, 50, 50);
+  if ((hSlider.value() * -1) + 61 === 61) {
+    hSlider.value() === 0; 
+  } else if (frameCount % ((hSlider.value() * -1) + 60) == 0) {
+    rect(random(width), 125, random(width), random(height));
   }
-  if(frameCount % 5 == 0) {
-    rect(200, random(height), 200, 50);
+
+
+  if ((vSlider.value() * -1) + 61 === 61) {
+    vSlider.value() === 0; 
+  } 
+   else if(frameCount % ((vSlider.value() * -1) + 60) == 0) {
+    ellipse(125, random(height), 200, 200);
   }
 }
 
