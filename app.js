@@ -8,16 +8,16 @@ let cnv2;
 let w = window.innerWidth;
 let h = window.innerWidth;
 let hSlider;
+let vSlider;
 
 function setup() {
-  cnv = createCanvas(w, h);
-  cnv2 = createGraphics(w, h);
-  cnv.parent('canvasContainer')
-  hSlider = createSlider(0, 61, 0)
-  hSlider.position(60, 600)
-  vSlider = createSlider(0, 61, 0)
-  vSlider.position(60, 700)
-
+  cnv = createCanvas(600, 600);
+  cnv2 = createGraphics(600, 600);
+  cnv.parent('canvasContainer');
+  hSlider = createSlider(0, 61, 0);
+  hSlider.position(60, 600);
+  vSlider = createSlider(0, 61, 0);
+  vSlider.position(60, 675);
 }
 
 function draw() {
@@ -43,7 +43,7 @@ function draw() {
   }
 }
 
-window.onresize = function() {
+window.onResize = function() {
   
   // assigns new values for width and height variables
   w = window.innerWidth;

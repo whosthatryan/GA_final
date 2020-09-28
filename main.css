@@ -2,6 +2,10 @@
     font-family: 'Cabin Sketch', cursive;
 }
 
+html {
+    max-height: 1000px;
+}
+
 body {
     margin: 0;
     display: flex;
@@ -20,19 +24,18 @@ header {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    opacity: 50%;
+    opacity: 95%;
     text-align: right;
     font-size: 4vw;
     text-align: center;
-    color: black;
+    color: #dab46d;
     margin: 50px 0 100px 0;
-    vertical-align: text-bottom;
 }
 
 input {
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;
-    width: 250px; /* Full-width */
+    width: 70%; /* Full-width */
     height: 2px; /* Specified height */
     background: #d3d3d3; /* Grey background */
     outline: none; /* Remove outline */
@@ -40,9 +43,11 @@ input {
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    border: 0.2px solid #010101;
+    /* border: 0.2px solid #010101; */
     border-radius: 2.6px;
-    margin: 0 0 0 0;
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+    margin: 60px 0 0 0;
 
   }
 
@@ -52,134 +57,101 @@ input {
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
     background:		#dab46d; /* Green background */
-    cursor: crosshair; /* Cursor on hover */
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; 
     border-radius: 15%;
   }
 
   canvas {
-      padding: 0 0 0 18px;
       max-width: 90%;
-      max-height: auto;
-      margin: -110px 0 0 0;
+      max-height: 400px;
+      margin: -80px 0 0 10px;
+      border-radius: 2%;
+      box-shadow: 0 8px 50px black;
   }
 
-.slider {
-    margin: 75px 0 0 0;
+
+.buttons {
+    margin: 30px 0 0 0;
 }
 
-.slider2 {
-    margin: 40px 0 0 0;
+#play {
+    padding: 0 20px 0 0;
+    color: #dab46d;
+    opacity: 0.7;
+}
+#stop {
+    padding: 0 0 0 20px;
+    color: #dab46d;
+    opacity: 0.7;
 }
 
-@media only screen and (min-width: 768px) {
-* {
-    font-family: 'Cabin Sketch', cursive;
+@media only screen and (min-width: 400px) {
+    
+    input {
+        margin: 250px 0 0 50px;
+      }
+      
+      input::-webkit-slider-thumb {
+        cursor: crosshair;
+      }
+
+      input:hover {
+        opacity: 1;
+      }
+    
+    .buttons {
+        margin: 70px 80px 0 0;
+    }
+    
 }
+
+
+@media only screen and (min-width: 900px) {
 
 body { 
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: left;
-    padding: 100px 100px 100px 100px;
     background-image: url('header-streak.png');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: top;
-    background-color: 	#ebebeb;
+    background-size: contain;
 }
 
 
 header {
+    margin: 0 700px 100px 0;
     transform: rotateZ(270deg);
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    position: absolute;
     opacity: 50%;
-    text-align: right;
+    text-align: center;
     font-size: 3.5vh;
-    color: black;
-    margin: 0 0 0 0;
-    vertical-align: text-bottom;
+    color: #dab46d;
+    vertical-align: inherit;
 }
 
-/* #canvas1 {
-    margin: 0 100px 0 0;
-    display: flex;
-    justify-content: right;
-    flex-direction: column;
-    align-items: center;
-} */
+canvas {
+    max-width: 60%;
+    max-height: auto;
+    margin: 250px 0 600px 350px;
+}
 
 input {
-    -webkit-appearance: none;  /* Override default CSS styles */
-    appearance: none;
-    width: 40%; /* Full-width */
-    height: 15px; /* Specified height */
-    background: #d3d3d3; /* Grey background */
-    outline: none; /* Remove outline */
-    opacity: 0.5; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-    transition: opacity .2s;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    border: 0.2px solid #010101;
+    position: relative;
+    width: 50vw; /* Full-width */
+    height: 2px; /* Specified height */
     border-radius: 2.6px;
-    margin: 0 0 0 150px;
-
+    margin: 250px 0 0 450px;
   }
 
-  input:hover {
-    opacity: 1; /* Fully shown on mouse-over */
-  }
-
-  input::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background:		#dab46d; /* Green background */
-    cursor: crosshair; /* Cursor on hover */
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; 
-    border-radius: 15%;
-  }
-
-
-
-
-
-
-
-
-  .sliderR {
-    -webkit-appearance: slider-vertical; /* WebKit */
-    writing-mode: bt-lr; /* IE */
-    width: 15px;
-    height: 400px;
-    appearance: none;
-    background: #d3d3d3; /* Grey background */
-    outline: none; /* Remove outline */
-    opacity: 0.5; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-    transition: opacity .2s;
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    border-radius: 2.6px;
-  }
-
-  .sliderR:hover {
-    opacity: 1; /* Fully shown on mouse-over */
-  }
-
-  .sliderR::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background:     #dab46d; 
-    cursor: crosshair; /* Cursor on hover */
-    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; 
-    border-radius: 15%;
-  }
-
+.buttons {
+    margin: -500px 0 10px 0;
 }
+
+.buttons:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+
+
+
+
+
+
+
+
+ 
