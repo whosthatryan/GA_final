@@ -3,7 +3,6 @@
 // const canvas3 = document.getElementById("canvas3").getContext("2d");
 // const canvas4 = document.getElementById("canvas4").getContext("2d");
 // import * as Tone from 'tone';
-
 let cnv;
 let cnv2;
 let w = window.innerWidth;
@@ -11,24 +10,9 @@ let h = window.innerWidth;
 let hSlider;
 let vSlider;
 
-const player = new Tone.Player('two_days_post.mp3').toDestination();
-Tone.loaded().then(() => {
-	player.start();
-});
-
-const distortion = new Tone.Distortion(0.4).toDestination();
-//connect a player to the distortion
-player.connect(distortion);
-
-document.querySelector('play')?.addEventListener('click', async () => {
-	await Tone.start()
-	console.log('audio is ready')
-})
-
-document.querySelector('stop')?.addEventListener('click', async () => {
-	await Tone.start()
-	console.log('audio is stopped')
-})
+const volume = -16;
+const MP3= 'two_days_post.mp3';
+let player;
 
 function setup() {
   cnv = createCanvas(600, 600);
@@ -38,6 +22,29 @@ function setup() {
   hSlider.position(60, 600);
   vSlider = createSlider(0, 61, 0);
   vSlider.position(60, 675);
+
+  Tone.Master.volume.value = volume;
+
+  player = new Tone.Player();
+  player.loop = true;
+  player.autostart = false;
+  player.loopStart = 1.0;
+
+  player.load(MP3);
+
+  autoFilter = new Tone.AutoFilter('8n');
+  autoFilter.start();
+
+  player.connect(autoFilter);
+  autoFilter.connect(Tone.Master);
+}
+
+window.onResize = function() {
+  
+  // assigns new values for width and height variables
+  w = window.innerWidth;
+  h = window.innerHeight;  
+  canvas.size(w,h);
 }
 
 function draw() {

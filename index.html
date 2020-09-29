@@ -10,8 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap" rel="stylesheet"/>
   <title>two_days_post</title>
   <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
-
+  
   <script src="app.js"></script>
+  <script src="https://unpkg.com/tone@13.8.25/build/Tone.js"></script>
 </head>
 
 <body>
@@ -19,13 +20,10 @@
     <h1 class='header'>two_days_post__//////</h1>
   </header>
   <div id='canvasContainer'>  
-      <!-- <div class='buttons'>
-        <i id='play' class='fa fa-play' style='font-size:36px;'></i>
-        <i id='stop'class='fa fa-stop' style='font-size:36px;'></i>
-      </div> -->
+
   </div>
   <div class='buttons'>
-    <button id="playBtn" onclick="Tone.start()">
+    <button id="playBtn" onclick="player.start()">
       <i id='play' class='fa fa-play' style='font-size:36px;'></i>
     </button>
     <button id="stopBtn" onclick="Tone.stop()">
