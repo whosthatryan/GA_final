@@ -2,6 +2,7 @@
 // const canvas2 = document.getElementById("canvas2").getContext("2d");
 // const canvas3 = document.getElementById("canvas3").getContext("2d");
 // const canvas4 = document.getElementById("canvas4").getContext("2d");
+// import * as Tone from 'tone';
 
 let cnv;
 let cnv2;
@@ -9,6 +10,25 @@ let w = window.innerWidth;
 let h = window.innerWidth;
 let hSlider;
 let vSlider;
+
+const player = new Tone.Player('two_days_post.mp3').toDestination();
+Tone.loaded().then(() => {
+	player.start();
+});
+
+const distortion = new Tone.Distortion(0.4).toDestination();
+//connect a player to the distortion
+player.connect(distortion);
+
+document.querySelector('play')?.addEventListener('click', async () => {
+	await Tone.start()
+	console.log('audio is ready')
+})
+
+document.querySelector('stop')?.addEventListener('click', async () => {
+	await Tone.start()
+	console.log('audio is stopped')
+})
 
 function setup() {
   cnv = createCanvas(600, 600);

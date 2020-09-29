@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
   <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap" rel="stylesheet"/>
-  <title>p5.js example</title>
+  <title>two_days_post</title>
   <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
 
   <script src="app.js"></script>
@@ -25,8 +25,12 @@
       </div> -->
   </div>
   <div class='buttons'>
-    <i id='play' class='fa fa-play' style='font-size:36px;'></i>
-    <i id='stop'class='fa fa-stop' style='font-size:36px;'></i>
+    <button id="playBtn" onclick="Tone.start()">
+      <i id='play' class='fa fa-play' style='font-size:36px;'></i>
+    </button>
+    <button id="stopBtn" onclick="Tone.stop()">
+      <i id='stop'class='fa fa-stop' style='font-size:36px;'></i>
+    </button>
   </div>
   <footer>
 

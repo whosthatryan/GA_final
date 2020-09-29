@@ -2,9 +2,9 @@
     font-family: 'Cabin Sketch', cursive;
 }
 
-html {
+/* html {
     max-height: 1000px;
-}
+} */
 
 body {
     margin: 0;
@@ -24,7 +24,7 @@ header {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    opacity: 95%;
+    opacity: 75%;
     text-align: right;
     font-size: 4vw;
     text-align: center;
@@ -39,14 +39,12 @@ input {
     height: 2px; /* Specified height */
     background: #d3d3d3; /* Grey background */
     outline: none; /* Remove outline */
-    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    opacity: 0.5; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
     /* border: 0.2px solid #010101; */
     border-radius: 2.6px;
-    margin-left: 0 auto;
-    margin-right: 0 auto;
     margin: 60px 0 0 0;
 
   }
@@ -64,7 +62,7 @@ input {
   canvas {
       max-width: 90%;
       max-height: 400px;
-      margin: -80px 0 0 10px;
+      margin: -80px 0 0 18px;
       border-radius: 2%;
       box-shadow: 0 8px 50px black;
   }
@@ -72,6 +70,7 @@ input {
 
 .buttons {
     margin: 30px 0 0 0;
+    opacity: 0.7;
 }
 
 #play {
@@ -85,10 +84,25 @@ input {
     opacity: 0.7;
 }
 
+#playBtn {
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+}
+
+#stopBtn {
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+}
+
 @media only screen and (min-width: 400px) {
     
     input {
-        margin: 250px 0 0 50px;
+
+        margin: 250px 0 0 25px;
       }
       
       input::-webkit-slider-thumb {
@@ -102,15 +116,32 @@ input {
     .buttons {
         margin: 70px 80px 0 0;
     }
+
+    #play:hover {
+        opacity: 1;
+        cursor: crosshair;
+    }
     
+    #stop:hover {
+        opacity: 1;
+        cursor: crosshair;
+    }
+
+    #playBtn {
+    border: none;
+    }
+
+    #stopBtn {
+    border: none;
+    }
 }
 
 
 @media only screen and (min-width: 900px) {
 
 body { 
-    background-image: url('header-streak.png');
-    background-size: contain;
+    background-image: url('bgV.png');
+    background-size: cover;
 }
 
 
@@ -118,7 +149,7 @@ header {
     margin: 0 700px 100px 0;
     transform: rotateZ(270deg);
     position: absolute;
-    opacity: 50%;
+    opacity: 65%;
     text-align: center;
     font-size: 3.5vh;
     color: #dab46d;
@@ -128,27 +159,21 @@ header {
 canvas {
     max-width: 60%;
     max-height: auto;
-    margin: 250px 0 600px 350px;
+    margin: 250px 150px 600px 350px;
 }
 
 input {
     position: relative;
-    width: 50vw; /* Full-width */
+    width: 35%; /* Full-width */
     height: 2px; /* Specified height */
     border-radius: 2.6px;
-    margin: 250px 0 0 450px;
+    margin: 250px 0 0 30vw;
   }
 
 .buttons {
-    margin: -500px 0 10px 0;
+    margin: -550px 0 10px 0;
 }
-
-.buttons:hover {
-    opacity: 1; /* Fully shown on mouse-over */
-  }
-
-
-
+}
 
 
 
