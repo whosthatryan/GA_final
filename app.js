@@ -1,17 +1,14 @@
 const volume = -2;
-
-let synth;
-
 let mouse;
-
 let cnv;
+let synth;
 
 function setup() {
 
   let cnv = createCanvas(600, 600);
-  cnv.parent('canvasContainer')
-  cnv.mousePressed(inCanvas)
-  
+  cnv.parent('canvasContainer');
+  cnv.mousePressed(inCanvas);
+
   background(100);
 
   Tone.Master.volume.value = volume;
@@ -24,14 +21,40 @@ function setup() {
 
   synth.connect(Tone.Master);
 
-  rSlider = createSlider(0, 61, 0);
+  rSlider = createSlider(0, 1000, 0);
   rSlider.position(60, 535);
   dSlider = createSlider(0, 61, 0);
   dSlider.position(60, 590);
   fSlider = createSlider(0, 61, 0);
   fSlider.position(60, 645);
-  oSlider = createSlider(0, 61, 0);
-  oSlider.position(60, 700);1
+  pSlider = createSlider(0, 61, 0);
+  pSlider.position(60, 700);
+
+  const reverb = new Tone.Freeverb().toMaster();
+  synth.connect(reverb);
+  reverb.roomSize = rSlider.value()
+  reverb.wet = rSlider.value();
+
+  // const reverb = new Tone.Freeverb({
+  //   roomSize: rSlider.value(),
+  //   wet: rSlider.value()
+  // }).toMaster();
+  // synth.connect(reverb);
+
+  const delay = new Tone.FeedbackDelay().toMaster();
+  synth.connect(delay);
+  delay.feedback = dSlider.value();
+  delay.wet = dSlider.value();
+
+  const filter = new Tone.AutoFilter().toMaster();
+  synth.connect(filter);
+  filter.frequency = fSlider.value();
+  filter.wet = fSlider.value();
+
+  const phaser = new Tone.Phaser().toMaster();
+  synth.connect(phaser);
+  phaser.Q = pSlider.value();
+  phaser.wet = pSlider.value();
 }
 
 window.onResize = function() {
@@ -46,14 +69,14 @@ function draw() {
   const dim = Math.min(width, height);
 
   const opacity = 0.085;
-  background(110);
+  background(140);
   
   // If we have a mouse position, draw it
   if (mouse) {
     noFill();
-    stroke(255);
-    strokeWeight(dim * 0.01);
-    rect(mouse[0], mouse[1], dim * 0.2);
+    stroke(300);
+    strokeWeight(dim * 0.02);
+    rect(mouse[0], mouse[1], dim * 0.3);
     
     mouse = null;
   }
