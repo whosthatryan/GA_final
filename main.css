@@ -2,11 +2,8 @@
     font-family: 'Cabin Sketch', cursive;
 }
 
-/* html {
-    max-height: 1000px;
-} */
-
 body {
+    position: absolute;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -29,14 +26,14 @@ header {
     font-size: 4vw;
     text-align: center;
     color: #dab46d;
-    margin: 50px 0 100px 0;
+    margin: 20px 0 120px 0;
 }
 
 input {
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;
     width: 70%; /* Full-width */
-    height: 2px; /* Specified height */
+    height: 10px; /* Specified height */
     background: #d3d3d3; /* Grey background */
     outline: none; /* Remove outline */
     opacity: 0.5; /* Set transparency (for mouse-over effects on hover) */
@@ -61,10 +58,11 @@ input {
 
   canvas {
       max-width: 90%;
-      max-height: 400px;
-      margin: -80px 0 0 18px;
+      max-height: 470px;
+      margin: -130px 0 0 18px;
       border-radius: 2%;
       box-shadow: 0 8px 50px black;
+      opacity: 80%;
   }
 
 
@@ -74,12 +72,12 @@ input {
 }
 
 #play {
-    padding: 0 20px 0 0;
+    padding: 0 0 0 0;
     color: #dab46d;
     opacity: 0.7;
 }
 #stop {
-    padding: 0 0 0 20px;
+    padding: 0 10px 0 0;
     color: #dab46d;
     opacity: 0.7;
 }
@@ -104,7 +102,19 @@ button:focus {
 }
 
 
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 376px) {
+
+    header {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        opacity: 75%;
+        text-align: right;
+        font-size: 6vw;
+        text-align: center;
+        color: #dab46d;
+        margin: -50px 0 10px 10vw;
+    }
     
     input {
 
@@ -134,16 +144,29 @@ button:focus {
     }
 
     #playBtn {
-    border: none;
+        border: none;
     }
 
     #stopBtn {
-    border: none;
+        border: none;
+    }
+    
+    canvas {
+        max-width: 90%;
+        max-height: 550px;
+        margin: -40px 0 0 10vw;
+        border-radius: 2%;
+        box-shadow: 0 8px 50px black;
+        opacity: 80%;
+    }
+
+    input {
+        margin: 220px 10px 0 10vw;
     }
 }
 
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 825px) {
 
 body { 
     background-image: url('bgV.png');
@@ -157,31 +180,61 @@ header {
     position: absolute;
     opacity: 65%;
     text-align: center;
-    font-size: 3.5vh;
+    font-size: 5vw;
     color: #dab46d;
     vertical-align: inherit;
 }
 
 canvas {
-    max-width: 60%;
-    max-height: auto;
-    margin: 250px 150px 600px 350px;
+    max-width: 80%;
+    max-height: 80%;
+    margin: 100px 150px 600px 33vw;
 }
 
 input {
-    position: relative;
-    width: 35%; /* Full-width */
-    height: 2px; /* Specified height */
-    border-radius: 2.6px;
-    margin: 250px 0 0 30vw;
-  }
+    width: 500px; /* Full-width */
+    height: 10px;
+    margin: 250px 0 0 32vw;
+}
 
 .buttons {
     margin: -550px 0 10px 0;
 }
 }
 
+@media only screen and (min-width: 1400px) {
 
+    body { 
+        background-image: url('bgV.png');
+        background-size: cover;
+    }
+    
+    
+    header {
+        margin: 0 700px 100px 0;
+        transform: rotateZ(270deg);
+        position: absolute;
+        opacity: 65%;
+        text-align: center;
+        font-size: 7vh;
+        color: #dab46d;
+        vertical-align: inherit;
+    }
+    
+    canvas {
+        max-width: 80%;
+        max-height: 80%;
+        margin: 100px 150px 600px 32vw;
+    }
+    
+    input {
+        margin: 250px 0 0 32vw;
+    }
+    
+    .buttons {
+        margin: -550px 0 10px 0;
+    }
+    }
 
 
 
