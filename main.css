@@ -35,14 +35,14 @@ header {
 }
 
 input {
-    -webkit-appearance: none;  /* Override default CSS styles */
+    -webkit-appearance: none;  
     appearance: none;
-    width: 95%; /* Full-width */
-    height: 10px; /* Specified height */
-    background: #d3d3d3; /* Grey background */
-    outline: none; /* Remove outline */
-    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    width: 250px; 
+    height: 10px; 
+    background: #d3d3d3; 
+    outline: none; 
+    opacity: 0.7; 
+    -webkit-transition: .2s; 
     transition: opacity .2s;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
     /* border: 0.2px solid #010101; */
@@ -52,11 +52,11 @@ input {
   }
 
   input::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
+    -webkit-appearance: none; 
     appearance: none;
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background:		#dab46d; /* Green background */
+    width: 25px; 
+    height: 25px; 
+    background:		#dab46d; 
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; 
     border-radius: 15%;
   }
@@ -122,8 +122,8 @@ button:focus {
     }
     
     input {
+    width: 400px; 
 
-        margin: 250px 0 0 25px;
       }
       
       input::-webkit-slider-thumb {
@@ -206,7 +206,7 @@ canvas {
 }
 
 input {
-    width: 500px; /* Full-width */
+    width: 500px; 
     height: 10px;
     margin: 40px 50px 0 0;
 }
