@@ -2,28 +2,14 @@ let volume = -75;
 let mouse;
 let cnv;
 let synth;
-// const reverb = new Tone.Freeverb({}).toMaster();
 let rVal;
-
 let ready = false;
-
-
-// Can be 'sine', 'sawtooth', 'triangle', 'square'
-// Can also add suffixes like sine8, square4
 const type = 'sine';
-
-// The filter and effect nodes which we will modulate
 let filter, effect;
-
-// Min and max frequency (Hz) cutoff range for the filter
 const filterMin = 100;
 const filterMax = 8000;
-
-// 0..1 values for our FX
 let fxU = 0.5;
 let fxV = 0.5;
-
-
 
 function setup() {
 
@@ -56,7 +42,6 @@ function setup() {
   });
 
   // await reverb.generate();
-
 
   effect = new Tone.FeedbackDelay(0.8, 0.9);
 
@@ -110,13 +95,13 @@ function setVolume() {
 //   });
 // }
 
-window.onResize = function() {
+// window.onResize = function() {
   
-  // assigns new values for width and height variables
-  w = window.innerWidth;
-  h = window.innerHeight;  
-  canvas.size(w,h);
-}
+//   // assigns new values for width and height variables
+//   w = window.innerWidth;
+//   h = window.innerHeight;  
+//   canvas.size(w,h);
+// }
 
 function draw() {
   const dim = Math.min(width, height);
