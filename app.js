@@ -41,8 +41,6 @@ function setup() {
     preDelay: 0.2
   });
 
-  // await reverb.generate();
-
   effect = new Tone.FeedbackDelay(0.8, 0.9);
 
   const filter = new Tone.Filter();
